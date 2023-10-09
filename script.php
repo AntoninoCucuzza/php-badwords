@@ -1,2 +1,3 @@
 <?php
-var_dump('we');
+
+var_dump($_GET);

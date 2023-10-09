@@ -28,8 +28,11 @@ Il secondo file riceverà la richiesta ed eseguirà queste operazioni:
     <h1>hello there</h1>
 
     <form action="script.php">
+
         <textarea name="paragraph" cols="30" rows="10" placeholder="paragraph here"></textarea>
+
         <input type="text" name="badword" placeholder="badword here">
+
         <button type="submit">submit</button>
     </form>
 

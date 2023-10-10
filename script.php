@@ -6,6 +6,8 @@ $censored = '<span class="danger">⚠️ questa parola e illegale ⚠️</span>'
 
 $newParagraph =  str_replace($_GET['badword'], $censored,  $_GET['paragraph']);
 
+$wordRepeat = substr_count($_GET['paragraph'], $_GET['badword']);
+
 ?>
 
 <!DOCTYPE html>
@@ -45,13 +47,18 @@ $newParagraph =  str_replace($_GET['badword'], $censored,  $_GET['paragraph']);
     <div class="d-flex">
 
         <h1>paragraph: <?php echo $_GET['paragraph'] ?></h1>
+        <p>length: <?php echo strlen($_GET['paragraph']) ?></p>
 
         <h2>bad word: <?php echo $_GET['badword'] ?></h2>
 
-        <p><?php echo $newParagraph ?></p>
+
+        <h2><?php echo $newParagraph ?></h2>
+        <p>length: <?php echo strlen($_GET['paragraph']) - strlen($_GET['badword']) * $wordRepeat; ?></p>
 
     </div>
+    <!--  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe dolor ibus ipsa dolor emque dolor hic rerum iure perspiciatis voluptatem dolor es molestias vel consequatur, illo ipsam quaerat velit ducimus labore distinctio earum? -->
 
+    <!-- 👆 esempio con dolor che si ripete 5 -->
 </body>
 
 </html>
